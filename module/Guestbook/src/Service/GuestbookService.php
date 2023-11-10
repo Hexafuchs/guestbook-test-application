@@ -45,7 +45,8 @@ class GuestbookService
             "VALUES(".
             sprintf(
                 "'%s', '%s', '%s', '%s', '%s', '%s', '%s'",
-                $model->id, $model->name, $model->email, $model->message, $model->website, $model->avatar, $model->dateSigned
+                $model['id'], $model['name'], $model['email'], $model['message'],
+                $model['website'], $model['avatar'], $model['dateSigned']
             ).
             ")",
             Adapter::QUERY_MODE_EXECUTE
