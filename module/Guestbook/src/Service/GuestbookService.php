@@ -38,6 +38,7 @@ class GuestbookService
         // -- Start of faulty code --
         /** @var TableGateway */
         $adapter = $this->table->getAdapter();
+        assert($adapter instanceof Adapter); // Force Psalm to detect the right type
         $row = $model->extract();
         $result = $adapter->query(
             "INSERT INTO ". $this->table->getTable()." (".implode(',', array_keys($row)).") ".
