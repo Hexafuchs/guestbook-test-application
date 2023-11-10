@@ -43,9 +43,10 @@ class GuestbookService
         $result = $adapter->query(
             "INSERT INTO ". $this->table->getTable()." (".implode(',', array_keys($row)).") ".
             "VALUES(".
-                    implode(',', array_map(function($value) {
-                        return "'".$value."'";
-                    }, array_values($row))).
+            sprintf(
+                "'%s', '%s', '%s', '%s', '%s', '%s', '%s'",
+                $model->id, $model->name, $model->email, $model->message, $model->website, $model->avatar, $model->dateSigned
+            ).
             ")",
             Adapter::QUERY_MODE_EXECUTE
         );
