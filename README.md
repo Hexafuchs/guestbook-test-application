@@ -11,3 +11,7 @@ This Laminas-Application is only for testing the possibility of the taint-analys
 **YOU'VE BEEN WARNED**
 
 Now you can go and discover the branches of this repository.
+
+---
+
+Thanks to **Perforce Software** for providing this application.

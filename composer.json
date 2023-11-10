@@ -1,0 +1,59 @@
+{
+    "name": "laminas/skeleton-application",
+    "description": "Skeleton Application for Zend Framework zend-mvc applications",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "mvc",
+        "zf"
+    ],
+    "homepage": "http://framework.zend.com/",
+    "require": {
+        "php": ">=8.1",
+        "laminas/laminas-component-installer": "*",
+        "laminas/laminas-mvc": "*",
+        "laminas/laminas-development-mode": "*",
+        "laminas/laminas-db": "*",
+        "laminas/laminas-form": "*",
+        "laminas/laminas-view": "*",
+        "laminas/laminas-i18n": "*",
+        "laminas/laminas-mvc-plugin-fileprg": "*",
+        "laminas/laminas-validator": "*",
+        "laminas/laminas-inputfilter": "*",
+        "laminas/laminas-filter": "*",
+        "laminas/laminas-hydrator": "*",
+        "laminas/laminas-navigation": "*",
+        "laminas/laminas-mvc-plugin-flashmessenger": "*",
+        "laminas/laminas-dependency-plugin": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "module/Application/src/",
+            "Guestbook\\": "module/Guestbook/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApplicationTest\\": "module/Application/test/"
+        }
+    },
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "development-disable": "laminas-development-mode disable",
+        "development-enable": "laminas-development-mode enable",
+        "development-status": "laminas-development-mode status",
+        "post-create-project-cmd": [
+            "@development-enable",
+            "php -r \"$file = file_get_contents('.gitignore'); $file = str_replace('composer.lock', '', $file); file_put_contents('.gitignore', $file);\""
+        ],
+        "serve": "php -S 0.0.0.0:8080 -t public",
+        "test": "phpunit"
+    },
+    "config": {
+        "allow-plugins": {
+            "laminas/laminas-dependency-plugin": true
+        }
+    }
+}
