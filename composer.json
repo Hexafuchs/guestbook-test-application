@@ -25,7 +25,9 @@
         "laminas/laminas-hydrator": "*",
         "laminas/laminas-navigation": "*",
         "laminas/laminas-mvc-plugin-flashmessenger": "*",
-        "laminas/laminas-dependency-plugin": "*"
+        "laminas/laminas-dependency-plugin": "*",
+        "hexafuchs/laminas-security": "^0.1.0",
+        "hexafuchs/psalm-laminas-plugin": "dev-dev"
     },
     "autoload": {
         "psr-4": {
@@ -53,7 +55,15 @@
     },
     "config": {
         "allow-plugins": {
-            "laminas/laminas-dependency-plugin": true
+            "laminas/laminas-dependency-plugin": true,
+            "laminas/laminas-component-installer": true
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Hexafuchs/psalm-laminas-plugin"
+        }
+    ],
+    "minimum-stability": "dev"
 }

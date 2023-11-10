@@ -11,6 +11,7 @@
  * This should be an array of module namespaces used in the application.
  */
 return [
+    'Hexafuchs\LaminasSecurity',
     'Laminas\Mvc\Plugin\FlashMessenger',
     'Laminas\Navigation',
     'Laminas\Mvc\Plugin\FilePrg',
